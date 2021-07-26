@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+    predict_service:
+        build: ./
+        image: stock_predict_image
+        ports:
+            - 5000:5000
+        working_dir: /home/predict
+        command: "python3 main.py"
+        volumes:
+            - ./:/home/predict/
